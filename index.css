@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Prevent copy & selection */
+  .no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+/* Custom Animations */
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+    border-color: rgba(251, 191, 36, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.8), 0 0 15px rgba(245, 158, 11, 0.5);
+    border-color: rgba(251, 191, 36, 1);
+  }
+}
+
+.gold-glow-active {
+  animation: pulse-gold 3s infinite ease-in-out;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100%) scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.particle-gold {
+  position: absolute;
+  background: radial-gradient(circle, #fbbf24 20%, #d97706 60%, transparent 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float-up 6s infinite linear;
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-active {
+  animation: spin-slow 15s infinite linear;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    background-color: rgba(6, 78, 59, 0.4);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+  }
+  40% {
+    transform: scale(1.25);
+    background-color: rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 35px rgba(16, 185, 129, 0.6);
+  }
+  60% {
+    transform: scale(1.25);
+    background-color: rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 35px rgba(16, 185, 129, 0.6);
+  }
+}
+
+.breathing-circle {
+  animation: breathe 8s infinite ease-in-out;
+}
+
+/* Watermark background overlay to prevent unauthorized screenshot sharing */
+.watermark-grid {
+  position: absolute;
+  inset: 0;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+  opacity: 0.04;
+  user-select: none;
+}
+
+.watermark-item {
+  transform: rotate(-30deg);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #fbbf24;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Subliminal flashing overlay */
+@keyframes subliminal-flash {
+  0%, 98% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0.12;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.subliminal-overlay {
+  pointer-events: none;
+  animation: subliminal-flash 4s infinite linear;
+}
+
+/* Chakra Flash Subliminal Text — speed controlled by inline style */
+.chakra-flash-text {
+  animation: chakra-flash 300ms infinite linear;
+  -webkit-text-stroke: 0.5px currentColor;
+  filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor);
+}
+
+@keyframes chakra-flash {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+/* Pulse animation for affirmation text by category */
+@keyframes chakra-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 25px currentColor) drop-shadow(0 0 40px currentColor);
+  }
+}
+
+.affirmation-chakra-glow {
+  animation: chakra-pulse 3s infinite ease-in-out;
+}
+
+/* Golden text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fef08a 0%, #fcd34d 25%, #fbbf24 50%, #f59e0b 75%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Android frame shadows */
+.android-phone-frame {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(217, 119, 6, 0.2);
+}
+
+/* Glassmorphism card */
+.glass-panel {
+  background: rgba(2, 44, 34, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+}
+
