@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>اپلیکیشن هوشمند باورهای ثروت | گرداب موفقیت ونیزان</title>
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="description" content="اپلیکیشن هوشمند باورهای ثروت، فرکانس، مدیتیشن و دفترچه شکرگزاری مخصوص vanizan.com" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/pwa-icon.svg" />
+    <link rel="apple-touch-icon" href="/android-icon-192.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-icon-512.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ونیزان ثروت" />
+    <!-- Google Fonts: Vazirmatn for gorgeous Persian typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Vazirmatn', sans-serif;
+        background-color: #022c22; /* Deep emerald green */
+        color: #f3f4f6;
+        direction: rtl; /* Persian is RTL */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        /* Copy protection */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      /* Custom scrollbar for premium look */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #022c22;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #fbbf24;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d97706;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
